@@ -1,8 +1,11 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { minusCounter } from '../reducers/countSlice'
 
-function MinusCounter({minusHandle}) {
+function MinusCounter() {
+  const dispatch = useDispatch()
   return (
-    <button className='btn btn-secondary' onClick={minusHandle} > Minus</button>
+    <button className='btn btn-secondary' onClick={() => dispatch(minusCounter())} > Minus</button>
   )
 }
 
